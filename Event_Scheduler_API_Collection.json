@@ -1,0 +1,123 @@
+{
+    "info": {
+        "_postman_id": "abcd-1234-efgh-5678-ijkl-9012mnop",
+        "name": "Event Scheduler API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Event",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Team Meeting\",\n    \"description\": \"Project discussion\",\n    \"start_time\": \"2025-06-28 19:30\",\n    \"end_time\": \"2025-06-28 20:30\"\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/events",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "events"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Events",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/events",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "events"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Event",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Updated Meeting\",\n    \"start_time\": \"2025-06-28 20:00\",\n    \"end_time\": \"2025-06-28 21:00\"\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/events/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "events",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Event",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/events/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "events",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Search Events",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:5000/events/search?q=team",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "events",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "q",
+                            "value": "team"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
